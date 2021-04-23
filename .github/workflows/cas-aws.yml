@@ -26,7 +26,7 @@ jobs:
         run: npm install
       # build dashboard
       - name: Build
-        run: npm run build:dashboard
+        run: npm run build
       # deploy to s3 and invalidate cloudfront
       - name: Deploy
         uses: reggionick/s3-deploy@v3
