@@ -18,8 +18,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private headerService: HeaderService,
-    ) { }
+  ) { }
 
   ngOnInit(): void {
   }

@@ -65,7 +65,7 @@ export class RegisterComponent implements OnInit {
     },
   ]
 
-  
+
 
   selectedPackage: IPackage = {
     packageName: 'No package selected',
@@ -78,7 +78,7 @@ export class RegisterComponent implements OnInit {
     price: 0,
     packageId: ''
   };
-  
+
 
 
   showButtons = true;
@@ -86,26 +86,21 @@ export class RegisterComponent implements OnInit {
   showPackages = false;
   showOrdersContactDetailsForm = false;
   showOrderOverview = false;
-
   customOrder = false;
-
   showCustomOrderForm = false;
-
   showRegisterContactForm = false;
-
   agbChecked = false;
   privacyChecked = false;
-
   selectedContactOption = "email";
 
   constructor(
     private fb: FormBuilder,
-    private router: Router, 
+    private router: Router,
     public appComponent: AppComponent,
-    ) {}
+  ) { }
 
   ngOnInit(): void {
-    
+
     this.validateForm = this.fb.group({
       name: [null, [Validators.required]],
       companyName: [null, [Validators.required]],
@@ -114,14 +109,9 @@ export class RegisterComponent implements OnInit {
       houseNumber: [null, [Validators.required]],
       postCode: [null, [Validators.required]],
       city: [null, [Validators.required]],
-      //password: [null, [Validators.required]],
-      //checkPassword: [null, [Validators.required, this.confirmationValidator]],
-      //nickname: [null, [Validators.required]],
       phoneNumberPrefix: ['+49'],
       phoneNumber: [null, [Validators.required]],
       serialNumber: [null, [Validators.required]],
-      //website: [null, [Validators.required]],
-      //captcha: [null, [Validators.required]],
       agree: [false, [Validators.requiredTrue]]
     });
 
@@ -136,20 +126,15 @@ export class RegisterComponent implements OnInit {
       name: [null, [Validators.required]],
       companyName: [null, [Validators.required]],
       email: [null, [Validators.required]],
-      //password: [null, [Validators.required]],
-      //checkPassword: [null, [Validators.required, this.confirmationValidator]],
-      //nickname: [null, [Validators.required]],
       phoneNumberPrefix: ['+49'],
       phoneNumber: [null, [Validators.required]],
       serialNumber: [null, [Validators.required]],
-      //website: [null, [Validators.required]],
-      //captcha: [null, [Validators.required]],
       agree: [false, [Validators.requiredTrue]]
     });
   }
 
   submitEnterpriseOrderForm() {
-    if(!this.customOrderForm.valid) {
+    if (!this.customOrderForm.valid) {
       alert('Bitte füllen Sie alle Felder aus!')
       return;
     }
@@ -164,16 +149,16 @@ export class RegisterComponent implements OnInit {
         amountOfReceiptsPerMonth: this.customOrderForm.value.numberOfReceipts,
         amountOfAdmins: this.customOrderForm.value.numberOfAdmins,
         amountOfUsers: this.customOrderForm.value.numberOfUsers,
-        },
+      },
       price: "",
-      packageId: ''
+      packageId: 'enterprise'
     }
     this.showCustomOrderForm = false;
     this.showOrdersContactDetailsForm = true;
   }
 
   submitContactDetailsForm(): void {
-    if(!this.validateForm.valid) {
+    if (!this.validateForm.valid) {
       alert('Bitte füllen Sie alle Felder aus!')
       return;
     }
@@ -183,16 +168,10 @@ export class RegisterComponent implements OnInit {
     }
     this.showOrdersContactDetailsForm = false;
     this.showOrderOverview = true;
-
-    this.showOrderOverview = true;
-
-
-    this.showOrderOverview = true;
-    //this.router.navigate(['']);
   }
 
-  updateConfirmValidator(): void {
-    /** wait for refresh value */
+ /*  updateConfirmValidator(): void {
+
     Promise.resolve().then(() => this.validateForm.controls.checkPassword.updateValueAndValidity());
   }
 
@@ -203,11 +182,8 @@ export class RegisterComponent implements OnInit {
       return { confirm: true, error: true };
     }
     return {};
-  };
+  }; */
 
-  getCaptcha(e: MouseEvent): void {
-    e.preventDefault();
-  }
 
   handleCustomerIsRegistered() {
     this.customerIsRegistered = true;
@@ -246,8 +222,8 @@ export class RegisterComponent implements OnInit {
   }
 
   handleSubmitOrder() {
-    if(this.agbChecked && this.privacyChecked) {
-      if(!this.customOrder) {
+    if (this.agbChecked && this.privacyChecked) {
+      if (!this.customOrder) {
         alert('Ihre Bestellung wurde in Auftrag gegeben und wird von uns verarbeitet!');
       }
       else {
@@ -258,7 +234,7 @@ export class RegisterComponent implements OnInit {
     }
     else {
       alert('Bitte stimmen Sie sowohl unseren AGB als auch unserer Datenschutzrichtlinie zu!')
-    } 
+    }
   }
 
   handleSubmitRegisterForm() {

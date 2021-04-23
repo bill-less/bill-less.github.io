@@ -17,7 +17,9 @@
           Ja
         </button>
 
-        <button nz-button (click)="handleCustomerIsNotRegistered()">Nein</button>
+        <button nz-button (click)="handleCustomerIsNotRegistered()">
+          Nein
+        </button>
       </div>
 
       <!-- CUSTOMER IS REGISTERED -->
@@ -36,7 +38,7 @@
           </div>
         </div>
 
-        <!-- STEP 2 -->
+        <!-- CONTACT FORM -->
         <div *ngIf="showOrdersContactDetailsForm">
           <div id="orderFormPackageInfo">
             <button nz-button (click)="handleClickOnBackToPackages()">
@@ -152,8 +154,7 @@
           </form>
         </div>
 
-        <!-- STEP 2 ENTERPRISE -->
-
+        <!-- CUSTOM ORDER FORM -->
         <div *ngIf="showCustomOrderForm">
           <div id="orderFormPackageInfo">
             <button nz-button (click)="handleClickOnBackToPackages()">
@@ -207,7 +208,6 @@
         </div>
 
         <!-- STEP 3 -->
-
         <div id="overviewContainer" *ngIf="showOrderOverview">
           <div id="changeableContentContainer">
             <div id="orderOverview">
@@ -280,7 +280,7 @@
               <label nz-radio nzValue="phone">Telefon</label>
               <label nz-radio nzValue="post">Post</label>
             </nz-radio-group>
-          </div> 
+          </div>
 
           <div id="infoBox">
             <div>
@@ -335,35 +335,35 @@
           <div class="divider"></div>
         </div>
 
-        <!-- STEP 3 ENTERPRISE -->
-
         <!-- CUSTOMER IS NOT REGISTERED -->
         <div id="registerContactFormContainer" *ngIf="showRegisterContactForm">
           <div>
             <div id="infoBoxRegister">
               <p>Vielen Dank, dass Sie bill.less nutzen möchten.</p>
               <div>
-                  <p>
-                    Um den digitalen Beleg an der Kasse auszugeben sind folgende
-                    Bedingungen notwendig:
-                  </p>
-                  <ul>
-                    <li>1. Ihre Kasse verfügt über ein Kundendisplay</li>
-                    <li>
-                      2. Sie haben eine stabile Internetverbindung (mind. 50 MBit/s)
-                    </li>
-                    <li>
-                      3. Sie haben die Lizenzdatei für das Modul "Elektronischer
-                      Kassenbeleg / bill.less" von CAS erworben ist auf der Kasse
-                      installiert
-                    </li>
-                  </ul>
+                <p>
+                  Um den digitalen Beleg an der Kasse auszugeben sind folgende
+                  Bedingungen notwendig:
+                </p>
+                <ul>
+                  <li>1. Ihre Kasse verfügt über ein Kundendisplay</li>
+                  <li>
+                    2. Sie haben eine stabile Internetverbindung (mind. 50
+                    MBit/s)
+                  </li>
+                  <li>
+                    3. Sie haben die Lizenzdatei für das Modul "Elektronischer
+                    Kassenbeleg / bill.less" von CAS erworben ist auf der Kasse
+                    installiert
+                  </li>
+                </ul>
 
-                  <p>
-                    Wir leiten Ihre Anfrage zum Erwerb des Moduls gerne an CAS weiter. 
-Bitte füllen Sie uns hierzu das nachfolgende Kontaktformular aus:
-Bei Unklarkeiten wenden Sie sich bitte an Ihren zuständigen Kassenhändler.
-                  </p>
+                <p>
+                  Wir leiten Ihre Anfrage zum Erwerb des Moduls gerne an CAS
+                  weiter. Bitte füllen Sie uns hierzu das nachfolgende
+                  Kontaktformular aus: Bei Unklarkeiten wenden Sie sich bitte an
+                  Ihren zuständigen Kassenhändler.
+                </p>
               </div>
             </div>
             <form nz-form [formGroup]="registerForm" (ngSubmit)="(submitContactDetailsForm)">
@@ -391,7 +391,7 @@ Bei Unklarkeiten wenden Sie sich bitte an Ihren zuständigen Kassenhändler.
                   <input nz-input formControlName="email" id="email" />
                 </nz-form-control>
               </nz-form-item>
-  
+
               <nz-form-item>
                 <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phoneNumber" nzRequired>Phone Number</nz-form-label>
                 <nz-form-control [nzSm]="14" [nzXs]="24" [nzValidateStatus]="validateForm.controls['phoneNumber']"
@@ -416,31 +416,33 @@ Bei Unklarkeiten wenden Sie sich bitte an Ihren zuständigen Kassenhändler.
                   <input nz-input id="serialNumber" formControlName="serialNumber" />
                 </nz-form-control>
               </nz-form-item>
-  
+
               <nz-form-item nz-row class="register-area">
                 <nz-form-control [nzSpan]="14" [nzOffset]="6">
                   <label nz-checkbox formControlName="agree">
                     <span>
-                      Sie geben sich damit einverstanden, dass die angegebenen Daten
-                nach Maßgabe unserer Datenschutzrichtlinie elektronisch erhoben
-                und gespeichert werden. Ebenfalls stimmen Sie zu, dass wir die
-                Daten an die CAS Software AG weiterleiten dürfen. Die Daten
-                werden dabei nur streng zweckgebunden genutzt. Diese
-                Einwilligung kann jederzeit durch eine E-Mail an
-                datenschutz@billless.app widerrufen werden. Im Falle des
-                Widerrufs werden die Daten umgehend gelöscht.
+                      Sie geben sich damit einverstanden, dass die angegebenen
+                      Daten nach Maßgabe unserer Datenschutzrichtlinie
+                      elektronisch erhoben und gespeichert werden. Ebenfalls
+                      stimmen Sie zu, dass wir die Daten an die CAS Software AG
+                      weiterleiten dürfen. Die Daten werden dabei nur streng
+                      zweckgebunden genutzt. Diese Einwilligung kann jederzeit
+                      durch eine E-Mail an datenschutz@billless.app widerrufen
+                      werden. Im Falle des Widerrufs werden die Daten umgehend
+                      gelöscht.
                     </span>
                   </label>
                 </nz-form-control>
               </nz-form-item>
               <nz-form-item nz-row class="register-area">
                 <nz-form-control [nzSpan]="14" [nzOffset]="6">
-                  <button nz-button (click)="handleSubmitRegisterForm()">Registrieren</button>
+                  <button nz-button (click)="handleSubmitRegisterForm()">
+                    Registrieren
+                  </button>
                 </nz-form-control>
               </nz-form-item>
             </form>
           </div>
-          
         </div>
       </div>
     </div>
