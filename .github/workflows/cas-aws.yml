@@ -1,0 +1,41 @@
+name: cas on AWS
+# build and deploy production dashboard to s3 and invalidate cloudfront
+
+# Controls when the action will run.
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches:
+      - main
+      - develop
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  dashboard-test-aws-deployment:
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    steps:
+      - uses: actions/checkout@v2
+      # install dependencies
+      - name: Install dependencies
+        run: npm install
+      # build dashboard
+      - name: Build
+        run: npm run build:dashboard
+      # deploy to s3 and invalidate cloudfront
+      - name: Deploy
+        uses: reggionick/s3-deploy@v3
+        with:
+          folder: docs
+          bucket: ${{ secrets.CAS_S3_BUCKET }}
+          bucket-region: ${{ secrets.S3_BUCKET_REGION }}
+          dist-id: ${{ secrets.CAS_CLOUDFRONT_DISTRIBUTION_ID }}
+          invalidation: /
+          delete-removed: true
+          no-cache: true
+          private: true
