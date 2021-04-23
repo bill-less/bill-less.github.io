@@ -1,0 +1,611 @@
+#body {
+    background-color: #fff;
+    text-align: center;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.divider {
+    height: 120px;
+}
+
+.dividerSmall {
+    height: 80px;
+}
+
+h1 {
+    font-size: 70px;
+    margin: 0;
+    padding: 60px 0 0 0;
+    border:0;
+    outline:0;
+}
+
+h2 {
+    font-size: 45px;
+    font-weight: 300;
+}
+
+#casLogo {
+    width: 500px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+button {
+    background-color: #f79a7e;
+    color: black;
+    border-radius: 15px;
+    border: 2px solid #f79a7e;
+    cursor: pointer;
+    width: 700px;
+    height: 80px;
+    margin: 2rem;
+    font-size: 40px;
+    font-weight: 400;
+    margin: 0 auto;
+}
+
+#casouselDiv {
+    margin-top: 50px;
+    width: 100%;
+}
+[nz-carousel-content] {
+    color: #143d42;
+  }
+
+nz-carousel {
+    height: 500px;
+}
+  
+.diashowPic {
+    height: 500px;
+    margin: 0 auto;
+}
+
+iframe {
+    margin: 50px 0 0 0;
+    width: 800px;
+    height: 450px;
+}
+
+.sectionHeader {
+    font-size: 50px;
+    font-weight: 500;
+}
+
+#advantagesBody {
+    width: 90%;
+    height: fit-content;
+    margin: 0 auto;
+}
+
+.advantageContainer {
+    min-height: fit-content;
+    height: 180px;
+    width: 80%;
+    border-radius: 30px;
+    margin: 0 auto;
+    background-color: #94a4aac9;
+}
+
+.advantageContainer div{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.upperRoundedDiv {
+    height: 30%;
+    width: 180px;
+    background-color: #94a4aac9;
+    border-radius: 120px 120px 0 0;
+    margin: 0 auto;
+}
+
+.advantageIcon {
+    margin-top: 20px;
+    width: 40%;
+    padding-bottom: 10px;
+}
+
+.formedDiv {
+    margin: 0;
+    width: 33.3333333333333%;
+}
+
+.formedDiv #timeIcon {
+    width: 50%;
+}
+
+.advantageName {
+    padding-top: 20px;
+    font-size: 1.8vw;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.advantageDescription {
+    padding-top: 10px;
+    font-size: 30px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+#contactSectionBody {
+    background-color: #e2dede;
+    margin-top: 40px;
+    padding-top: 30px;
+}
+
+.contactInformation {
+    text-align: center;
+    margin-bottom: 80px;
+    width: 50%;
+}
+
+.contactInformation > *{
+    text-align: center; 
+    display: inline-flex; 
+}
+
+.contactInformation img{
+    width: 80px;
+}
+
+.contactInformation p{
+    font-size: 40px;
+    padding: 0 0 0 50px;
+}
+
+#packagesBody {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#packageContainer {
+    justify-content: center;
+}
+
+.packageDiv {
+    width: 20%;
+}
+
+.packagePic {
+    width: 100%;
+}
+
+
+
+.packageNameDiv {
+    background-color: #143d42;
+    color: #fff;
+    border-radius: 20px 20px 10px 10px;
+    height: 110px;
+    line-height: 110px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.packageNameDiv p {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.packageInfoDiv {
+    background-color: #b0cace;
+    border-radius: 10px 10px 20px 20px;
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    text-align: center;
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.packageInfoDiv li {
+    font-size: 25px;
+    padding: 20px 0 0 0;
+}
+
+.packagePrice {
+    font-weight: 500;
+}
+
+#furtherInformationHeader {
+    margin: 0;
+}
+
+#furtherInformationSubHeader {
+    margin: 0;
+    font-size: 35px;
+}
+
+.furtherInformationDownloadDiv {
+    margin: 20px 0;
+    width: 50%;
+}
+
+.furtherInformationDownloadDiv > *{
+    text-align: center; 
+    display: inline-flex; 
+}
+
+.furtherInformationDownloadDiv img {
+    height: 80px;
+    padding-right: 20px;
+}
+
+.furtherInformationDownloadDiv ul {
+    text-align: left;
+}
+
+.furtherInformationDownloadDiv li {
+    font-size: 35px;
+}
+
+.furtherInformationDownloadDiv #costInfo {
+    font-size: 20px;
+}
+
+#faqBody {
+    background-color: #143d42;
+    color: #fff;
+    margin: 0;
+    padding-bottom: 50px;
+}
+
+#faqHeader {
+    font-size: 35px;
+    padding-top: 30px;
+}
+
+#faqBody > div {
+    margin: 0 auto;
+    width: 80%;
+}
+
+hr {
+    color: #fff;
+}
+
+.accordionItem {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.accordionItem:target .answer {
+    max-height: fit-content;
+}
+
+.accordionLink {
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.accordionLink:target {
+    color: #f79a7e;
+}
+
+.answer {
+    max-height: 0;
+    overflow: hidden;
+    position: relative;
+    padding-left: 30px;
+    height: fit-content;
+}
+
+.answer p {
+padding-top: 10px;
+}
+
+.answer::before {
+    content: "";
+    position: absolute 
+}
+
+a {
+    color: #fff;
+}
+
+.ant-layout > * {
+    margin: 0;
+    padding: 0;
+    box-sizing: unset;
+    background-color: violet;
+}
+
+
+@media only screen and (max-width: 980px) {
+
+    nz-carousel {
+        height: 50vw;
+        color: #143d42;
+    }
+      
+    .diashowPic {
+        height: 50vw;
+        margin: 0 auto;
+    }
+
+    button {
+        width: 80%;
+        font-size: 4vw;
+    }
+
+    iframe {
+        width: 80vw;
+        height: 50vh;
+    }
+
+    .upperRoundedDiv {
+        height: 15%;
+        width: 50%;
+        background-color: #94a4aac9;
+        border-radius: 120px 120px 0 0;
+        margin: 0 auto;
+    }
+
+    .advantageContainer {
+        min-height: fit-content;
+        height: 220px;
+    }
+
+    .advantageName {
+        
+        font-size: 3vw;
+        font-weight: 600;
+    }
+    
+    .advantageDescription {
+        padding-top: 10px;
+        font-size: 30px;
+    }
+
+    #contactSectionBody {
+        width: 100%
+    }
+
+    .contactInformation {
+        padding: 10px;
+    }
+
+    .contactInformation p {
+        padding: 0;
+        font-size: 30px;
+    }
+
+    .contactInformation img {
+        width: 15%;
+        padding-right: 10px;
+    }
+
+    .packageDiv {
+        width: 30%;
+        margin-top: 20px;
+    }
+    
+    
+    
+}
+
+@media only screen and (max-width: 600px) {
+
+    .diashowPic {
+        margin: 0 auto;
+    }
+
+    .formedDiv {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .advantageContainer {
+        min-height: fit-content;
+        height: 140px;
+    }
+
+    .upperRoundedDiv {
+        height: 20%;
+        width: 180px;
+        background-color: #94a4aac9;
+        border-radius: 120px 120px 0 0;
+        margin: 0 auto;
+    }
+    
+    .advantageIcon {
+        margin-top: 20px;
+        width: 40%;
+        padding-bottom: 50px;
+    }
+    
+
+    .upperRoundedDiv {
+        height: 30%;
+        width: 160px;
+        background-color: #94a4aac9;
+        border-radius: 120px 120px 0 0;
+        margin: 0 auto;
+    }
+
+
+    #contactSectionBody {
+        width: 100%
+    }
+
+    .contactInformation {
+        padding: 10px;
+        width: 90%;
+    }
+
+    .contactInformation > * {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .contactInformation p {
+        padding: 0;
+        font-size: 30px;
+    }
+
+    .contactInformation img {
+        width: 15%;
+        padding-right: 10px;
+    }
+
+    .packageDiv {
+        width: 40%;
+        margin-top: 20px;
+    }
+    
+    .packagePic {
+        width: 100%;
+    }
+
+    .furtherInformationDownloadDiv {
+        width: 100%;
+    }
+
+    .faqQuestion {
+        padding: 10px 0 0 30px;
+    }
+
+    
+}
+
+
+@media only screen and (max-width: 550px) {
+
+    h1 {
+        padding: 0;
+    }
+
+    button {
+        width: 80%;
+        height: 60px;
+        margin: 0 auto;
+    }
+
+    nz-carousel {
+        height: 50vw;
+        color: #143d42;
+    }
+      
+    .diashowPic {
+        height: 50vw;
+        margin: 0 auto;
+    }
+
+   #mainTextDiv {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 45px;
+        font-weight: 500;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+
+
+    #casLogo {
+        width: 80%;
+    }
+
+    .formedDiv {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .advantageContainer {
+        min-height: fit-content;
+        height: 140px;
+    }
+
+    .upperRoundedDiv {
+        height: 20%;
+        width: 180px;
+        background-color: #94a4aac9;
+        border-radius: 120px 120px 0 0;
+        margin: 0 auto;
+    }
+    
+    .advantageIcon {
+        margin-top: 20px;
+        width: 40%;
+        padding-bottom: 50px;
+    }
+    
+
+    .upperRoundedDiv {
+        height: 30%;
+        width: 160px;
+        background-color: #94a4aac9;
+        border-radius: 120px 120px 0 0;
+        margin: 0 auto;
+    }
+
+    #furtherInformationSubHeader {
+        padding-bottom: 20px;
+    }
+
+    .furtherInformationDownloadDiv img {
+        height: 60px;
+    }
+
+    #contactSectionBody {
+        width: 100%
+    }
+
+    .contactInformation {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .contactInformation > * {
+        margin: 0 auto;
+    }
+
+    .contactInformation p {
+        padding: 0;
+        font-size: 30px;
+    }
+
+    .contactInformation img {
+        width: 15%;
+        padding-right: 10px;
+    }
+
+    .packageDiv {
+        width: 70%;
+        margin-top: 20px;
+    }
+    
+    .packagePic {
+        width: 100%;
+    }
+
+    .furtherInformationDownloadDiv {
+        width: 100%;
+    }
+
+    .faqQuestion {
+        padding: 10px 0 0 30px;
+    }
+    
+}

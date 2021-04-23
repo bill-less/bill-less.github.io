@@ -1,0 +1,92 @@
+<nz-layout>
+  <nz-header>
+    <header>
+
+      <img id="logoHeader" src="../assets/Logo.png" alt="bill.less logo">
+      
+      <button nz-button class="login-form-button login-form-margin contactButtonHeader" [nzType]="'primary'" (click)="register()" *ngIf="!headerService.getSwitchButtonToHome()">Kontakt</button> 
+      <button nz-button class="login-form-button login-form-margin contactButtonHeader" [nzType]="'primary'" (click)="home()" *ngIf="headerService.getSwitchButtonToHome()">Home</button> 
+
+      
+    </header>
+  </nz-header>
+
+  <div id="billlessLogo">
+    <img id="logoHeader" src="../assets/Logo.png" alt="bill.less logo">
+  </div>
+  
+  <router-outlet>
+    
+  </router-outlet>
+
+  <nz-footer>
+    <footer>
+     <div id="wrapperFooter">
+
+      <div id="footerInfo">
+
+        <div>
+          <a href="https://billless.app/"><img id="logoFooter" src="../assets/logo192.png" alt="billlessLogo"></a>
+        </div>
+
+        <div>
+          <ul>
+            <li>
+              <a href="https://billless.app/app">App</a>
+            </li>
+            <li>
+              <a href="https://billless.app/b2b">For Buisness</a>
+            </li>
+            <li>
+              <a href="https://billless.app/aboutus">Our team</a>
+            </li>
+            <li>
+              <a href="https://api-test.billless.io/api-docs/">API Docs</a>
+          </ul>
+        </div>
+
+        <div>
+          <div>
+            <div id="socialMediaSectionFooter">
+              <a href=""><img src="../assets/linkedin.png" alt="linkedInIcon"></a>
+              <a href="https://www.instagram.com/bill.less/"><img src="../assets/instagram-logo.png" alt="instagramIcon"></a>
+              <a href=""><img src="../assets/facebook.png" alt="facebookIcon"></a>
+              <a href=""><img src="../assets/whatsapp.png" alt="whatsappIcon"></a>
+            </div>
+
+            <div id="contactSectionFooter">
+              <a href="">info@billless.app</a>
+              <br>
+              <a href="">+49 162 9573494</a>
+              <br>
+              <button id="contactButtonFooter">Contact</button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div id="footerPrivacy">
+        <div>
+          <div>
+            <a href="https://billless.app/imprint">Imprint</a>
+          </div>
+
+          <div>
+            <a href="https://billless.app/policy">Privacy notice</a>
+          </div>
+        </div>
+      </div>
+
+     
+
+     <div id="footerCopyright">
+      © bill.less 2021 | Stuttgart
+     </div>
+
+    </div>
+
+    </footer>
+  </nz-footer>
+</nz-layout>

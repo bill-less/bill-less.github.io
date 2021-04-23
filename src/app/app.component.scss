@@ -1,0 +1,190 @@
+@font-face {
+    font-family: "muliBillLess";
+    src: local("muliBillLess") url("../fonts/Muli-VariableFont:wght.ttf") format('truetype');
+}
+
+
+* {
+    scroll-behavior: smooth;
+    font-family: "muliBillLess", sans-serif, Helvetica, Arial;
+    overflow-x: hidden;
+}
+
+/* Header */
+
+#billlessLogo {
+    display: none;
+}
+
+.ant-layout-header {
+    background-color: white;
+    height: fit-content;
+}
+
+.contactButtonHeader {
+    background-color: #f79a7e;
+    color: white;
+    border-radius: 4px;
+    border: 2px solid #f79a7e;
+    cursor: pointer;
+    float: right;
+    height: 50px;
+    width: 110px;
+    margin-top: 50px;
+}
+
+#logoHeader {
+    height: 60px;
+    margin: 50px 50px;
+}
+
+
+
+/* Footer */
+
+footer * {
+    color: #fff;
+    justify-content: center;
+}
+
+.ant-layout-footer {
+    background-color: #282c34;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23282c34' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%232f343d' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23292d35' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%232d323b' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23292d36' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%232c3039' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%232a2e36' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%232a2f37' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%232a2e37' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23292d35' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%232b2f38' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23272b33' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+    background-size: cover;
+}
+
+#wrapperFooter {
+    padding: 3vw;
+    margin: 0 auto; 
+}
+
+#footerInfo {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#footerInfo > div {
+    //flex: 1;
+    width: 33%;
+    text-align: center;
+}
+
+#logoFooter {
+    width: 50px;
+}
+
+#socialIconsDiv {
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+ul {
+    list-style-type: none;
+    text-align: center;
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    margin: 1rem;
+}
+
+#socialMediaSectionFooter {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+#socialMediaSectionFooter a {
+    margin: 1rem;
+}
+
+footer #contactSectionFooter a{
+ margin: 1rem;
+ display: inline-block;
+}
+
+
+
+#contactButtonFooter {
+    background-color: #f79a7e;
+    color: white;
+    border-radius: 4px;
+    border: 2px solid #f79a7e;
+    cursor: pointer;
+    margin: 1rem;
+}
+
+#socialMediaSectionFooter a img {
+    width: 40px;
+}
+
+#footerPrivacy {
+    text-align: center;
+}
+
+#footerCopyright {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 950px) {
+
+    #billlessLogo {
+        display: none;
+        visibility: none;
+    }
+
+    #socialMediaSectionFooter a img {
+        width: 100%;
+    }
+}
+
+
+
+@media only screen and (max-width: 650px) {
+
+    * { 
+        //background-color: #fff;
+    }
+
+    #billlessLogo {
+        width: 100%;
+        background-color: #fff;
+        text-align: center;
+        display: block;
+    }
+
+    #logoHeader {
+        margin: 30px auto;
+    }
+
+    nz-header {
+        visibility: hidden;
+        position: absolute;
+        margin: 0%;
+        display: none;
+    }
+
+    #footerInfo {
+        display: block;
+    }
+
+    #footerInfo > div {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    #socialMediaSectionFooter {
+        width: 100%;
+    }
+
+    #socialMediaSectionFooter a img {
+        width: 100%;
+    }
+}
+
+
+

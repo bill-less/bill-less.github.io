@@ -1,0 +1,239 @@
+<div id="body">
+  <div id="wrapper">
+    <div id="mainTextDiv">
+      <h1>Digitale Belegausgabe</h1>
+      <h2>mit auf Ihrer CASPOS Kasse</h2>
+    </div>
+    
+    <img id="casLogo" src="../../../assets/cas.png" alt="" />
+    <br />
+    <button (click)="navigateToRegister()">Jetzt auf der Kasse installieren</button>
+    <br />
+
+    <div id="casouselDiv">
+      <nz-carousel [nzAutoPlay]="true" [nzAutoPlaySpeed]="6000">
+        <div nz-carousel-content *ngFor="let imageUrl of arrayOfImgUrls">
+          <img class="diashowPic" [src]='imageUrl' />
+        </div>
+      </nz-carousel>
+    </div>
+  
+    <div class="dividerSmall">
+  
+    </div>
+  
+    <div id="advantagesBody">
+      <p class="sectionHeader">Die Vorteile</p>
+      <div class="container" id="container3">
+        <div class="formedDiv"> 
+          <div class="upperRoundedDiv">
+            <img class="advantageIcon" src="../../../assets/save.png" alt="" />
+          </div>
+            <div class="advantageContainer">
+              <p class="advantageName">Gut für die Umwelt</p>
+              <div>
+                <p classe="advantageDescription">Kein Ausdruck von unnötigen Belegen die im Müll landen</p>
+              </div>
+            </div>
+        </div>
+        <div class="formedDiv">
+          <div class="upperRoundedDiv">
+            <img class="advantageIcon" id="timeIcon" src="../../../assets/time-is-money.png" alt="" />
+          </div>
+          <div class="advantageContainer">
+            <p class="advantageName">Kosten & Zeit einsparen</p> 
+            <div>
+            <p classe="advantageDescription">für das Handling mit den Belegrollen</p>
+            </div>
+          </div>
+        </div>
+        <div class="formedDiv">
+          <div class="upperRoundedDiv">
+            <img class="advantageIcon" src="../../../assets/online-payment.png" alt="" />
+          </div>
+          <div class="advantageContainer">
+            <p class="advantageName">Kontaktloser Belegempfang</p>
+            <div>
+            <p classe="advantageDescription">für einen komplett digitalen Bezahlprozess</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <button (click)="navigateToRegister()">Jetzt auf der Kasse installieren</button>
+  
+    <div class="dividerSmall">
+
+    </div>
+
+
+    <div id="contactSectionBody">
+      <p class="sectionHeader">
+        Sie haben Fragen? <br />
+        Sprechen Sie uns an!
+      </p>
+      <div class="container" id="container2">
+        <div class="contactInformation">
+          <img src="../../../assets/telefon.png" alt="" />
+          <p>+49 0000000000</p>
+        </div>
+        <div class="contactInformation">
+          <img src="../../../assets/email.png" alt="" />
+          <p>Name@billless.app</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="divider">
+  
+    </div>
+  
+    <div id="packagesBody">
+      <p class="sectionHeader">Die Packete</p>
+      <div class="container" id="packageContainer">
+        <div class="packageDiv">
+          <img class="packagePic" src="../../../assets/starter.png" alt="">
+        </div>
+
+        <div class="packageDiv">
+          <img class="packagePic" src="../../../assets/basic.png" alt="">
+        </div>
+
+        <div class="packageDiv">
+          <img class="packagePic" src="../../../assets/classic.png" alt="">
+        </div>
+
+        <div class="packageDiv">
+          <img class="packagePic" src="../../../assets/premium.png" alt="">
+        </div>
+
+        <div class="packageDiv">
+          <img class="packagePic" src="../../../assets/enterprise.png" alt="">
+        </div>
+  
+       <!--  <div class="packagesDiv">
+          <div class="packageNameDiv">
+            <p>BASIC</p>
+          </div>
+          <div class="packageInfoDiv">
+            <ul>
+              <li>1 Kasse</li>
+              <li>inkl. 1000 Belege / Monat</li>
+              <li>inkl. 1 Admin + 1 User</li>
+              <li>inkl. Dashboard</li>
+              <li class="packagePrice">3 Euro / Monat</li>
+            </ul>
+          </div>
+        </div>
+  
+        <div class="packagesDiv">
+          <div class="packageNameDiv">
+            <p>HYPER</p>
+          </div>
+          <div class="packageInfoDiv">
+            <ul>
+              <li>1 Kasse</li>
+              <li>inkl. 1000 Belege / Monat</li>
+              <li>inkl. 1 Admin + 1 User</li>
+              <li>inkl. Dashboard</li>
+              <li class="packagePrice">3 Euro / Monat</li>
+            </ul>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  
+    <div class="divider">
+  
+    </div>
+  
+    <div id="furtherInformationBody">
+      <div>
+          <p class="sectionHeader" id="furtherInformationHeader">Weitere Informationen</p>
+          <p id="furtherInformationSubHeader">zum Download</p>
+          <div class="container" id="container2">
+              <div class="furtherInformationDownloadDiv">
+                <img src="../../../assets/auf-speicherlaufwerk-herunterladen.png" alt="">
+                <div>
+                  <ul>
+                    <li>Preisliste:</li>
+                    <li id="costInfo">Stand: April 2021</li>
+                  </ul>
+                </div>
+              </div>
+  
+              <div class="furtherInformationDownloadDiv">
+                <img src="../../../assets/auf-speicherlaufwerk-herunterladen.png" alt="">
+                <div>
+                  <ul>
+                    <li>Preisliste:</li>
+                    <li id="costInfo">Stand: April 2021</li>
+                  </ul>
+                </div>
+              </div>
+  
+              <div class="furtherInformationDownloadDiv">
+                <img src="../../../assets/auf-speicherlaufwerk-herunterladen.png" alt="">
+                <div>
+                  <ul>
+                    <li>Preisliste:</li>
+                    <li id="costInfo">Stand: April 2021</li>
+                  </ul>
+                </div>
+              </div>
+  
+              <div class="furtherInformationDownloadDiv">
+                <img src="../../../assets/auf-speicherlaufwerk-herunterladen.png" alt="">
+                <div>
+                  <ul>
+                    <li>Preisliste:</li>
+                    <li id="costInfo">Stand: April 2021</li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  
+    <div class="divider">
+  
+    </div>
+  
+    <div id="faqBody">
+      <div>
+          <p id="faqHeader">FAQ</p>
+          <div class="accordion">
+            <div class="accordionItem" id="question1">
+              <hr>
+              <div class="faqQuestion">
+                <a class="accordionLink" href="#question1">Erfülle ich mit dem Produkt die Belegpflicht?</a>
+                <div class="answer">
+                  <p>Some awesome text :)</p>  
+                </div>
+              </div>
+              
+            </div>
+
+            <div class="accordionItem" id="question2">
+              <hr>
+              <div class="faqQuestion">
+                <a class="accordionLink" href="#question2">Was muss gemacht werden, damit ich bill.less einsetzen kann?</a>
+                <div class="answer">
+                  <p>Some awesome text :) <br> ... <br> ... <br> ... <br> ... </p>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          
+  
+          
+          
+      </div>
+    </div>
+  
+  
+  </div>
+  
+</div>
