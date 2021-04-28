@@ -8,3 +8,13 @@
     font-family: muliBillLess;
 }
  */
+
+ @font-face {
+    font-family: "muliBillLess";
+    src: url("./fonts/muliFont.ttf") format('truetype');
+}
+
+
+* {
+    font-family: "muliBillLess";
+}

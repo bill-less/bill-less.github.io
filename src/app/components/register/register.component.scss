@@ -1,7 +1,10 @@
-  div {
+  #body {
     background-color: #fff;
-    /* max-height: fit-content;
-    text-align: center; */
+  }
+
+  .wrapper {
+    width: 90%;
+    margin: 0 auto;
   }
 
   .divider {
@@ -37,89 +40,9 @@
     margin: 20px;
   }
 
-  #packagesDiv {
-    text-align: center;
-    padding-bottom: 30px;
-  }
 
-  #packagesContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
 
-  .package {
-    margin: 10px;
-    height: max-content;
-    transition: transform .3s;
-  }
-
-  .package:hover {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    transform: scale(1.1);
-  }
-
-  #orderFormPackageInfo {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-  }
-
-  #overviewContainer {
-    width: 80%;
-    margin: 0 auto;
-  }
-
-  #changeableContentContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-  }
-
-  #orderOverview {
-    width: 60%;
-    justify-content: left;
-    margin-right: 20px;
-  }
-
-  #contactOverview {
-    width: 40%;
-    justify-content: left;
-    margin-left: 20px;
-  }
-
-  #contactSelectionRadioButtonContainer {
-    margin-bottom: 40px;
-  }
-
-  [nz-radio] {
-    display: block;
-  }
-
-  #checkBoxContainer {
-    margin-top: 50px;
-  }
-
-  .completeCheckBox {
-    display: flex;
-  }
-
-  .checkBox {
-    margin-right: 10px;
-  }
-
-  #orderButtonContainer {
-    width: 100%;
-    text-align: center;
-  }
-
-  #orderButton {
-    margin: 30px auto;
-    width: 200px;
-    height: 50px;
-  }
-
+  
   #infoBox {
     //margin: 0 auto;
   }
@@ -160,4 +83,46 @@
     width: 80%;
     margin: 0 auto;
     padding: 50px 0;
+  }
+
+
+
+
+    /* iPads (portrait and landscape) ----------- */
+@media only screen and (max-width: 1024px) {
+  /* Styles */
+
+  #buttonFormControl {
+    text-align: center;
+  }
+
+  }
+
+
+
+  /* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 380px) {
+  /* Styles */
+
+  .sectionHeader {
+    font-size: 35px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  #infoBoxRegister {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .ant-col-offset-6 {
+    margin: 0;
+  }
+
+  button {
+    margin: 0 auto;
+  }
+
+  
+
   }

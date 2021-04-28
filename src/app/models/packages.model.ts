@@ -1,7 +1,29 @@
+export interface IOrderDto {
+    mail: string;
+    contactData: IContactFormData;
+    packageData: IPackage;
+}
+
+export interface IRegisterDto {
+    mail: string;
+    contactData: IContactFormData;
+}
+
+export interface IContactFormData {
+    name: string;
+    companyName: string;
+    street: string;
+    houseNumber: number;
+    postCode: number;
+    city: string;
+    email: string;
+    phoneNumber: string;
+    serialNumber: string;
+}
 export interface IPackage {
     packageName: string,
     content: IPackageContent,
-    price: number | string,
+    price: number,
     packageId: string,
 }
 

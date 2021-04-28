@@ -14,21 +14,22 @@
 }
 
 h1 {
-    font-size: 70px;
+    font-size: 80px;
+    font-weight: 700;
     margin: 0;
-    padding: 60px 0 0 0;
+    padding: 30px 0 0 0;
     border:0;
     outline:0;
 }
 
 h2 {
-    font-size: 45px;
+    font-size: 50px;
     font-weight: 300;
 }
 
 #casLogo {
-    width: 500px;
-    margin-top: 3rem;
+    width: 550px;
+    margin-top: 20px;
     margin-bottom: 3rem;
 }
 
@@ -46,8 +47,15 @@ button {
     margin: 0 auto;
 }
 
+#casouselDescription {
+    margin: 50px 0 0 0;
+    text-align: left;
+    padding-left: 15%;
+    font-size: 35px;
+    font-weight: 500;
+}
+
 #casouselDiv {
-    margin-top: 50px;
     width: 100%;
 }
 [nz-carousel-content] {
@@ -78,24 +86,25 @@ iframe {
     width: 90%;
     height: fit-content;
     margin: 0 auto;
+    padding-bottom: 70px;
 }
 
 .advantageContainer {
-    min-height: fit-content;
-    height: 180px;
+    height: 300px;
     width: 80%;
     border-radius: 30px;
     margin: 0 auto;
+    padding-bottom: 10px;
     background-color: #94a4aac9;
 }
 
 .advantageContainer div{
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
 }
 
 .upperRoundedDiv {
-    height: 30%;
+    height: 25%;
     width: 180px;
     background-color: #94a4aac9;
     border-radius: 120px 120px 0 0;
@@ -103,7 +112,7 @@ iframe {
 }
 
 .advantageIcon {
-    margin-top: 20px;
+    margin-top: 25px;
     width: 40%;
     padding-bottom: 10px;
 }
@@ -119,14 +128,16 @@ iframe {
 
 .advantageName {
     padding-top: 20px;
-    font-size: 1.8vw;
-    font-weight: 500;
+    font-size: 30px;
+    font-weight: bolder;
     margin-bottom: 20px;
 }
 
 .advantageDescription {
-    padding-top: 10px;
-    font-size: 30px;
+    padding-top: 15px;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 20px;
 }
 
 .container {
@@ -136,7 +147,7 @@ iframe {
 }
 
 #contactSectionBody {
-    background-color: #e2dede;
+    background-color: #f0efe6;
     margin-top: 40px;
     padding-top: 30px;
 }
@@ -273,6 +284,10 @@ ul {
     width: 80%;
 }
 
+#faqList {
+    text-align: left;
+}
+
 hr {
     color: #fff;
 }
@@ -317,6 +332,10 @@ a {
     color: #fff;
 }
 
+.coloredLinks {
+    color: #f79a7e;
+}
+
 .ant-layout > * {
     margin: 0;
     padding: 0;
@@ -326,6 +345,14 @@ a {
 
 
 @media only screen and (max-width: 980px) {
+    /* * {
+        color: #f79a7e;
+    } */
+
+    #casouselDescription {
+        text-align: center;
+        padding: 20px 0 20px 0;
+    }
 
     nz-carousel {
         height: 50vw;
@@ -347,8 +374,14 @@ a {
         height: 50vh;
     }
 
+    .formedDiv {
+        width: 50%;
+        min-height: fit-content; 
+        margin: 0 auto;
+    }
+
     .upperRoundedDiv {
-        height: 15%;
+        height: 25%;
         width: 50%;
         background-color: #94a4aac9;
         border-radius: 120px 120px 0 0;
@@ -356,8 +389,9 @@ a {
     }
 
     .advantageContainer {
-        min-height: fit-content;
-        height: 220px;
+        //height: 220px;
+        padding-bottom: 10px;
+        min-height: fit-content; 
     }
 
     .advantageName {
@@ -368,7 +402,7 @@ a {
     
     .advantageDescription {
         padding-top: 10px;
-        font-size: 30px;
+        font-size: 25;
     }
 
     #contactSectionBody {
@@ -411,8 +445,8 @@ a {
     }
 
     .advantageContainer {
+        padding-bottom: 10px;
         min-height: fit-content;
-        height: 140px;
     }
 
     .upperRoundedDiv {
@@ -527,22 +561,15 @@ a {
     }
 
     .formedDiv {
-        width: 80%;
+        width: 85%;
         display: block;
         margin: 0 auto;
     }
 
     .advantageContainer {
         min-height: fit-content;
-        height: 140px;
-    }
-
-    .upperRoundedDiv {
-        height: 20%;
-        width: 180px;
-        background-color: #94a4aac9;
-        border-radius: 120px 120px 0 0;
-        margin: 0 auto;
+        height: fit-content;
+        padding-bottom: 10px;
     }
     
     .advantageIcon {
@@ -554,10 +581,20 @@ a {
 
     .upperRoundedDiv {
         height: 30%;
-        width: 160px;
+        width: 145px;
         background-color: #94a4aac9;
         border-radius: 120px 120px 0 0;
         margin: 0 auto;
+    }
+
+    .advantageName {
+        font-size: 20px;
+        font-weight: 400;
+        margin: 0;
+    }
+
+    .advantageDescription {
+        font-size: 15px;
     }
 
     #furtherInformationSubHeader {
@@ -606,6 +643,10 @@ a {
 
     .faqQuestion {
         padding: 10px 0 0 30px;
+    }
+
+    .faqQuestion a {
+        font-size: 20px;
     }
     
 }

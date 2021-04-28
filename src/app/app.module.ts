@@ -21,6 +21,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NZ_ICONS } from 'ng-zorro-antd/icon';
 import { IconDefinition } from '@ant-design/icons-angular';
 import * as AllIcons from '@ant-design/icons-angular/icons';
+import { NzMessageModule } from 'ng-zorro-antd/message';
 
 import { DemoNgZorroAntdModule } from './ng-zorro-antd.module';
 
@@ -31,7 +32,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 
-import { HeaderService } from './components/services/header.service'
+import { HeaderService } from './services/header.service';
+import { SubscriptionComponent } from './components/subscription/subscription.component';
+import { ContactComponent } from './components/contact/contact.component'
+import { NzConfig } from 'ng-zorro-antd/core/config';
 
 registerLocaleData(de);
 
@@ -40,11 +44,17 @@ const antDesignIcons = AllIcons as {
 };
 const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key])
 
+const ngZorroConfig: NzConfig = {
+  
+};
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    SubscriptionComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -65,6 +75,7 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     NzCardModule,
     RouterModule,
     DemoNgZorroAntdModule,
+    NzMessageModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: de_DE }, {provide: NZ_ICONS, useValue: icons}],
   bootstrap: [AppComponent]

@@ -1,450 +1,127 @@
-<div>
-  <div id="headerTextDiv">
-    <p class="sectionHeader">Kontaktformular</p>
-  </div>
+<div id="body">
+  <div id="wrapper">
 
-  <div>
-    <div id="container">
-      <div id="buttonDiv" *ngIf="showButtons">
-        <!-- STEP 1 -->
-        <h2>
-          Haben Sie von CAS die Lizenzdatei / das Softwareupdate für das Modul
-          "elektronischer Kassenbeleg / bill.less bereits" auf ihrer Kasse
-          installiert?
-        </h2>
-
-        <button nz-button (click)="handleCustomerIsRegistered()" [disabled]="customerIsRegistered">
-          Ja
-        </button>
-
-        <button nz-button (click)="handleCustomerIsNotRegistered()">
-          Nein
-        </button>
-      </div>
-
-      <!-- CUSTOMER IS REGISTERED -->
-      <div>
-        <div id="packagesDiv" *ngIf="showPackages">
-          <p>Wählen Sie ein Paket Ihrer Wahl:</p>
-
-          <div id="packagesContainer">
-            <div class="package" *ngFor="let package of packagesData" (click)="handleClickOnPackage(package)">
-              <img src="../../../assets/{{ package.packageId }}.png" alt="" />
-            </div>
-
-            <div class="package">
-              <img src="../../../assets/enterprise.png" alt="" (click)="handleClickOnCustomePackage()" />
-            </div>
-          </div>
-        </div>
-
-        <!-- CONTACT FORM -->
-        <div *ngIf="showOrdersContactDetailsForm">
-          <div id="orderFormPackageInfo">
-            <button nz-button (click)="handleClickOnBackToPackages()">
-              Packetauswahl
-            </button>
-            <button nz-button (click)="handleClickOnChangeOrderDetails()" *ngIf="customOrder">
-              Angebot bearbeiten
-            </button>
-            <p>Gewähltes Paket: {{ selectedPackage.packageName }}</p>
-          </div>
-          <form nz-form [formGroup]="validateForm" (ngSubmit)="submitContactDetailsForm()">
-            <nz-form-item>
-              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="name" nzRequired>
-                <span>Kontaktperson (Vor- und Nachname)</span>
-              </nz-form-label>
-              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Bitte einen Namen eingeben!">
-                <input nz-input id="name" formControlName="name" />
-              </nz-form-control>
-            </nz-form-item>
-
-            <nz-form-item>
-              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="companyName" nzRequired>
-                <span>Unternehmensname</span>
-              </nz-form-label>
-              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Bitte einen Unternehmennamen eingeben!">
-                <input nz-input id="companyName" formControlName="companyName" />
-              </nz-form-control>
-            </nz-form-item>
-
-            <nz-form-item>
-              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="street" nzRequired>
-                <span>Straße</span>
-              </nz-form-label>
-              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Bitte einen Straßenamen eingeben!">
-                <input nz-input id="street" formControlName="street" />
-              </nz-form-control>
-            </nz-form-item>
-
-            <nz-form-item>
-              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="houseNumber" nzRequired>
-                <span>Hausnummer</span>
-              </nz-form-label>
-              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Bitte eine Hausnummer eingeben!">
-                <input nz-input id="houseNumber" formControlName="houseNumber" />
-              </nz-form-control>
-            </nz-form-item>
-
-            <nz-form-item>
-              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="postCode" nzRequired>
-                <span>Plz</span>
-              </nz-form-label>
-              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Bitte eine Postleitzahl eingeben!">
-                <input nz-input id="postCode" formControlName="postCode" />
-              </nz-form-control>
-            </nz-form-item>
-
-            <nz-form-item>
-              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="city" nzRequired>
-                <span>Ort</span>
-              </nz-form-label>
-              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Bitte einen Ortsnamen eingeben!">
-                <input nz-input id="city" formControlName="city" />
-              </nz-form-control>
-            </nz-form-item>
-
-            <nz-form-item>
-              <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
-              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Bitte eine gültige Email eingeben!">
-                <input nz-input formControlName="email" id="email" />
-              </nz-form-control>
-            </nz-form-item>
-
-            <nz-form-item>
-              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phoneNumber" nzRequired>Telefonnummer</nz-form-label>
-              <nz-form-control [nzSm]="14" [nzXs]="24" [nzValidateStatus]="validateForm.controls['phoneNumber']"
-                nzErrorTip="Please input your phone number!">
-                <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
-                  <ng-template #addOnBeforeTemplate>
-                    <nz-select formControlName="phoneNumberPrefix" class="phone-select">
-                      <nz-option nzLabel="+49" nzValue="+49"></nz-option>
-                    </nz-select>
-                  </ng-template>
-                  <input formControlName="phoneNumber" id="'phoneNumber'" nz-input />
-                </nz-input-group>
-              </nz-form-control>
-            </nz-form-item>
-
-            <nz-form-item>
-              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="seriennummer" nzRequired
-                nzTooltipTitle="Die Seriennummer wird benötigt um zu überprüfen, ob Ihre Kasse den Anforderungen entspricht und die bill.less Funktion freizuschalten">
-                <span>Seriennummer</span>
-              </nz-form-label>
-              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Bitte Seriennummer eingeben!">
-                <input nz-input id="serialNumber" formControlName="serialNumber" />
-              </nz-form-control>
-            </nz-form-item>
-
-            <nz-form-item nz-row class="register-area">
-              <nz-form-control [nzSpan]="14" [nzOffset]="6">
-                <label nz-checkbox formControlName="agree">
-                  <span>
-                    I have read the
-                    <a target="_blank" href="">agreement</a>
-                  </span>
-                </label>
-              </nz-form-control>
-            </nz-form-item>
-            <nz-form-item nz-row class="register-area">
-              <nz-form-control [nzSpan]="14" [nzOffset]="6">
-                <button nz-button>Zur Bestellübersicht</button>
-              </nz-form-control>
-            </nz-form-item>
-          </form>
-        </div>
-
-        <!-- CUSTOM ORDER FORM -->
-        <div *ngIf="showCustomOrderForm">
-          <div id="orderFormPackageInfo">
-            <button nz-button (click)="handleClickOnBackToPackages()">
-              Packetauswahl
-            </button>
-            <p>Gewähltes Paket: Enterprise</p>
-          </div>
-          <form nz-form [formGroup]="customOrderForm" (ngSubmit)="submitEnterpriseOrderForm()">
-            <nz-form-item>
-              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="numberOfCashpoints" nzRequired>
-                <span>Anzahl der Kassensysteme</span>
-              </nz-form-label>
-              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Bitte eine Anzahl eingeben!">
-                <input nz-input id="numberOfCashpoints" formControlName="numberOfCashpoints" />
-              </nz-form-control>
-            </nz-form-item>
-
-            <nz-form-item>
-              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="numberOfReceipts" nzRequired>
-                <span>Anzahl an monatlichen Belegen</span>
-              </nz-form-label>
-              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Bitte eine Anzahl eingeben!">
-                <input nz-input id="numberOfReceipts" formControlName="numberOfReceipts" />
-              </nz-form-control>
-            </nz-form-item>
-
-            <nz-form-item>
-              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="numberOfAdmins" nzRequired>
-                <span>Anzahl an Admins</span>
-              </nz-form-label>
-              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Bitte eine Anzahleingeben!">
-                <input nz-input id="numberOfAdmins" formControlName="numberOfAdmins" />
-              </nz-form-control>
-            </nz-form-item>
-
-            <nz-form-item>
-              <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="numberOfUsers" nzRequired>
-                <span>Anzahl an Usern</span>
-              </nz-form-label>
-              <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Bitte eine Anzahl eingeben!">
-                <input nz-input id="numberOfUsers" formControlName="numberOfUsers" />
-              </nz-form-control>
-            </nz-form-item>
-
-            <nz-form-item nz-row class="register-area">
-              <nz-form-control [nzSpan]="14" [nzOffset]="6">
-                <button nz-button>Weiter</button>
-              </nz-form-control>
-            </nz-form-item>
-          </form>
-        </div>
-
-        <!-- STEP 3 -->
-        <div id="overviewContainer" *ngIf="showOrderOverview">
-          <div id="changeableContentContainer">
-            <div id="orderOverview">
-              <nz-descriptions nzBordered [nzColumn]="{ xxl: 1, xl: 1, lg: 1, md: 1, sm: 1, xs: 1 }"
-                nzLayout="horizontal">
-                <nz-descriptions-item nzTitle="Produkt">{{
-                  selectedPackage.packageName
-                  }}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Zahlungsart" *ngIf="!customOrder">Rechnung</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Packet Informationen">
-                  <nz-descriptions nzBordered [nzColumn]="{ xxl: 1, xl: 1, lg: 1, md: 1, sm: 1, xs: 1 }"
-                    nzLayout="horizontal">
-                    <nz-descriptions-item nzTitle="Anzahl der Kassen">{{
-                      selectedPackage.content.amountOfCashpoint
-                      }}</nz-descriptions-item>
-                    <nz-descriptions-item nzTitle="Anzahl monatlicher Belege">{{
-                      selectedPackage.content.amountOfReceiptsPerMonth
-                      }}</nz-descriptions-item>
-                    <nz-descriptions-item nzTitle="Anzahl der Admins">{{
-                      selectedPackage.content.amountOfAdmins
-                      }}</nz-descriptions-item>
-                    <nz-descriptions-item nzTitle="Anzahl der User">{{
-                      selectedPackage.content.amountOfUsers
-                      }}</nz-descriptions-item>
-                  </nz-descriptions>
-                </nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Preis" *ngIf="!customOrder">{{
-                  selectedPackage.price
-                  }}</nz-descriptions-item>
-              </nz-descriptions>
-            </div>
-
-            <div id="contactOverview">
-              <nz-descriptions nzBordered [nzColumn]="{ xxl: 1, xl: 1, lg: 1, md: 1, sm: 1, xs: 1 }"
-                nzLayout="horizontal">
-                <nz-descriptions-item nzTitle="Name">{{
-                  validateForm.value.name
-                  }}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Unternehmensname">{{
-                  validateForm.value.companyName
-                  }}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Email">{{
-                  validateForm.value.email
-                  }}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Straße">{{
-                  validateForm.value.street
-                  }}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Hausnummer">{{
-                  validateForm.value.houseNumber
-                  }}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Postleitzahl">{{
-                  validateForm.value.postCode
-                  }}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Stadt">{{
-                  validateForm.value.city
-                  }}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Telefonnummer">{{ validateForm.value.phoneNumberPrefix
-                  }}{{ validateForm.value.phoneNumber }}</nz-descriptions-item>
-                <nz-descriptions-item nzTitle="Seriennummer">{{
-                  validateForm.value.serialNumber
-                  }}</nz-descriptions-item>
-              </nz-descriptions>
-            </div>
-          </div>
-
-          <div id="contactSelectionContainer">
-            <p>Gewünschte Kontaktaufnahme zur Zusendung des Angebotes:</p>
-            <nz-radio-group id="contactSelectionRadioButtonContainer" [(ngModel)]="selectedContactOption">
-              <label nz-radio nzValue="email">Email</label>
-              <label nz-radio nzValue="phone">Telefon</label>
-              <label nz-radio nzValue="post">Post</label>
-            </nz-radio-group>
-          </div>
-
-          <div id="infoBox">
-            <div>
-              <p>
-                Um den digitalen Beleg an der Kasse auszugeben sind folgende
-                Bedingungen notwendig:
-              </p>
-              <ul>
-                <li>1. Ihre Kasse verfügt über ein Kundendisplay</li>
-                <li>
-                  2. Sie haben eine stabile Internetverbindung (mind. 50 MBit/s)
-                </li>
-                <li>
-                  3. Sie haben die Lizenzdatei für das Modul "Elektronischer
-                  Kassenbeleg / bill.less" von CAS erworben ist auf der Kasse
-                  installiert
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div id="checkBoxContainer">
-            <div class="completeCheckBox">
-              <label class="checkBox" nz-checkbox [(ngModel)]="agbChecked"></label>
-              <p><a href="https://google.de" _target="">AGB</a> zustimmen</p>
-            </div>
-
-            <div class="completeCheckBox">
-              <label class="checkBox" nz-checkbox [(ngModel)]="privacyChecked"></label>
-              <p>
-                Sie geben sich damit einverstanden, dass die angegebenen Daten
-                nach Maßgabe unserer Datenschutzrichtlinie elektronisch erhoben
-                und gespeichert werden. Ebenfalls stimmen Sie zu, dass wir die
-                Daten an die CAS Software AG weiterleiten dürfen. Die Daten
-                werden dabei nur streng zweckgebunden genutzt. Diese
-                Einwilligung kann jederzeit durch eine E-Mail an
-                datenschutz@billless.app widerrufen werden. Im Falle des
-                Widerrufs werden die Daten umgehend gelöscht.
-              </p>
-            </div>
-          </div>
-
-          <div id="orderButtonContainer">
-            <button id="orderButton" nz-button (click)="handleSubmitOrder()" *ngIf="!customOrder">
-              Kostenpflichtig bestellen
-            </button>
-
-            <button id="orderButton" nz-button (click)="handleSubmitOrder()" *ngIf="customOrder">
-              Angebot anfragen
-            </button>
-          </div>
-          <div class="divider"></div>
-        </div>
-
-        <!-- CUSTOMER IS NOT REGISTERED -->
-        <div id="registerContactFormContainer" *ngIf="showRegisterContactForm">
-          <div>
-            <div id="infoBoxRegister">
-              <p>Vielen Dank, dass Sie bill.less nutzen möchten.</p>
-              <div>
-                <p>
-                  Um den digitalen Beleg an der Kasse auszugeben sind folgende
-                  Bedingungen notwendig:
-                </p>
-                <ul>
-                  <li>1. Ihre Kasse verfügt über ein Kundendisplay</li>
-                  <li>
-                    2. Sie haben eine stabile Internetverbindung (mind. 50
-                    MBit/s)
-                  </li>
-                  <li>
-                    3. Sie haben die Lizenzdatei für das Modul "Elektronischer
-                    Kassenbeleg / bill.less" von CAS erworben ist auf der Kasse
-                    installiert
-                  </li>
-                </ul>
-
-                <p>
-                  Wir leiten Ihre Anfrage zum Erwerb des Moduls gerne an CAS
-                  weiter. Bitte füllen Sie uns hierzu das nachfolgende
-                  Kontaktformular aus: Bei Unklarkeiten wenden Sie sich bitte an
-                  Ihren zuständigen Kassenhändler.
-                </p>
-              </div>
-            </div>
-            <form nz-form [formGroup]="registerForm" (ngSubmit)="(submitContactDetailsForm)">
-              <nz-form-item>
-                <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="name" nzRequired>
-                  <span>Name</span>
-                </nz-form-label>
-                <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Bitte einen Namen eingeben!">
-                  <input nz-input id="name" formControlName="name" />
-                </nz-form-control>
-              </nz-form-item>
-
-              <nz-form-item>
-                <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="companyName" nzRequired>
-                  <span>Unternehmensname</span>
-                </nz-form-label>
-                <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Bitte einen Unternehmensnamen eingeben!">
-                  <input nz-input id="companyName" formControlName="companyName" />
-                </nz-form-control>
-              </nz-form-item>
-
-              <nz-form-item>
-                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
-                <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
-                  <input nz-input formControlName="email" id="email" />
-                </nz-form-control>
-              </nz-form-item>
-
-              <nz-form-item>
-                <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phoneNumber" nzRequired>Phone Number</nz-form-label>
-                <nz-form-control [nzSm]="14" [nzXs]="24" [nzValidateStatus]="validateForm.controls['phoneNumber']"
-                  nzErrorTip="Please input your phone number!">
-                  <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
-                    <ng-template #addOnBeforeTemplate>
-                      <nz-select formControlName="phoneNumberPrefix" class="phone-select">
-                        <nz-option nzLabel="+49" nzValue="+49"></nz-option>
-                      </nz-select>
-                    </ng-template>
-                    <input formControlName="phoneNumber" id="'phoneNumber'" nz-input />
-                  </nz-input-group>
-                </nz-form-control>
-              </nz-form-item>
-
-              <nz-form-item>
-                <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="seriennummer" nzRequired
-                  nzTooltipTitle="Die Seriennummer wird benötigt um zu überprüfen, ob Ihre Kasse den Anforderungen entspricht und die bill.less Funktion freizuschalten">
-                  <span>Seriennummer</span>
-                </nz-form-label>
-                <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Bitte Seriennummer eingeben!">
-                  <input nz-input id="serialNumber" formControlName="serialNumber" />
-                </nz-form-control>
-              </nz-form-item>
-
-              <nz-form-item nz-row class="register-area">
-                <nz-form-control [nzSpan]="14" [nzOffset]="6">
-                  <label nz-checkbox formControlName="agree">
-                    <span>
-                      Sie geben sich damit einverstanden, dass die angegebenen
-                      Daten nach Maßgabe unserer Datenschutzrichtlinie
-                      elektronisch erhoben und gespeichert werden. Ebenfalls
-                      stimmen Sie zu, dass wir die Daten an die CAS Software AG
-                      weiterleiten dürfen. Die Daten werden dabei nur streng
-                      zweckgebunden genutzt. Diese Einwilligung kann jederzeit
-                      durch eine E-Mail an datenschutz@billless.app widerrufen
-                      werden. Im Falle des Widerrufs werden die Daten umgehend
-                      gelöscht.
-                    </span>
-                  </label>
-                </nz-form-control>
-              </nz-form-item>
-              <nz-form-item nz-row class="register-area">
-                <nz-form-control [nzSpan]="14" [nzOffset]="6">
-                  <button nz-button (click)="handleSubmitRegisterForm()">
-                    Registrieren
-                  </button>
-                </nz-form-control>
-              </nz-form-item>
-            </form>
-          </div>
-        </div>
-      </div>
+    <div id="headerTextDiv">
+      <p class="sectionHeader">Kontaktformular</p>
     </div>
+  
+    <div>
+      <div id="container">
+        
+  
+        <!-- CUSTOMER IS REGISTERED -->
+        
+          <!-- CUSTOMER IS NOT REGISTERED -->
+          <div id="registerContactFormContainer">
+            <div>
+              <div id="infoBoxRegister">
+                <p>Vielen Dank, dass Sie bill.less nutzen möchten.</p>
+                <div>
+                  <p>
+                    Um den digitalen Beleg an der Kasse auszugeben sind folgende
+                    Bedingungen notwendig:
+                  </p>
+                  <ul>
+                    <li>1. Ihre Kasse verfügt über ein Kundendisplay</li>
+                    <li>
+                      2. Sie haben eine stabile Internetverbindung (mind. 50
+                      MBit/s)
+                    </li>
+                    <li>
+                      3. Sie haben die Lizenzdatei für das Modul "Elektronischer
+                      Kassenbeleg / bill.less" von CAS erworben ist auf der Kasse
+                      installiert
+                    </li>
+                  </ul>
+  
+                  <p>
+                    Wir leiten Ihre Anfrage zum Erwerb des Moduls gerne an CAS
+                    weiter. Bitte füllen Sie uns hierzu das nachfolgende
+                    Kontaktformular aus: Bei Unklarkeiten wenden Sie sich bitte an
+                    Ihren zuständigen Kassenhändler.
+                  </p>
+                </div>
+              </div>
+              <form nz-form [formGroup]="registerForm" (ngSubmit)="handleSubmitRegisterForm()">
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="name" nzRequired>
+                    <span>Name</span>
+                  </nz-form-label>
+                  <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Bitte einen Namen eingeben!">
+                    <input nz-input id="name" formControlName="name" />
+                  </nz-form-control>
+                </nz-form-item>
+  
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="companyName" nzRequired>
+                    <span>Unternehmensname</span>
+                  </nz-form-label>
+                  <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Bitte einen Unternehmensnamen eingeben!">
+                    <input nz-input id="companyName" formControlName="companyName" />
+                  </nz-form-control>
+                </nz-form-item>
+  
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
+                  <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
+                    <input nz-input formControlName="email" id="email" />
+                  </nz-form-control>
+                </nz-form-item>
+  
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phoneNumber" nzRequired>Phone Number</nz-form-label>
+                  <nz-form-control [nzSm]="14" [nzXs]="24" [nzValidateStatus]="registerForm.controls['phoneNumber']"
+                    nzErrorTip="Please input your phone number!">
+                    <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
+                      <ng-template #addOnBeforeTemplate>
+                        <nz-select formControlName="phoneNumberPrefix" class="phone-select">
+                          <nz-option nzLabel="+49" nzValue="+49"></nz-option>
+                        </nz-select>
+                      </ng-template>
+                      <input formControlName="phoneNumber" id="'phoneNumber'" nz-input />
+                    </nz-input-group>
+                  </nz-form-control>
+                </nz-form-item>
+  
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="seriennummer" nzRequired
+                    nzTooltipTitle="Die Seriennummer wird benötigt um zu überprüfen, ob Ihre Kasse den Anforderungen entspricht und die bill.less Funktion freizuschalten">
+                    <span>Seriennummer</span>
+                  </nz-form-label>
+                  <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Bitte Seriennummer eingeben!">
+                    <input nz-input id="serialNumber" formControlName="serialNumber" />
+                  </nz-form-control>
+                </nz-form-item>
+  
+                <nz-form-item id="" nz-row class="register-area">
+                  <nz-form-control [nzSpan]="14" [nzOffset]="6">
+                    <label nz-checkbox formControlName="agree">
+                      <span>
+                        Sie geben sich damit einverstanden, dass die angegebenen
+                        Daten nach Maßgabe unserer Datenschutzrichtlinie
+                        elektronisch erhoben und gespeichert werden. Ebenfalls
+                        stimmen Sie zu, dass wir die Daten an die CAS Software AG
+                        weiterleiten dürfen. Die Daten werden dabei nur streng
+                        zweckgebunden genutzt. Diese Einwilligung kann jederzeit
+                        durch eine E-Mail an datenschutz@billless.app widerrufen
+                        werden. Im Falle des Widerrufs werden die Daten umgehend
+                        gelöscht.
+                      </span>
+                    </label>
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item nz-row class="register-area">
+                  <nz-form-control id="buttonFormControl" [nzSpan]="14" [nzOffset]="6">
+                    <button nz-button>
+                      Registrieren
+                    </button>
+                  </nz-form-control>
+                </nz-form-item>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
-</div>
+  
+  </div>

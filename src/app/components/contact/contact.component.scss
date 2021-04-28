@@ -1,0 +1,28 @@
+#body {
+    background-color: #fff;
+    min-height: 45vh;
+}
+
+h2 {
+    font-size: 50px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  h3 {
+      font-size: 20px;
+  }
+
+#buttonDiv {
+    text-align: center;
+}
+
+button {
+    background-color: #f79a7e;
+    color: black;
+    border-radius: 4px;
+    border: 2px solid #f79a7e;
+    cursor: pointer;
+    width: 80px;
+    margin: 20px;
+  }

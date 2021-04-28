@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HeaderService } from '../services/header.service';
+import { HeaderService } from '../../services/header.service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +14,9 @@ export class HomeComponent implements OnInit {
     '../../../assets/2.png',
     '../../../assets/3.png',
     '../../../assets/4.png',
-  ]
+  ];
+
+  showContactButtons = false;
 
   constructor(
     private router: Router,
@@ -23,8 +25,17 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  navigateToRegister() {
-    this.router.navigate(['register']);
+  navigateToContact() {
+    this.router.navigate(['contact']);
   }
+
+navigateToRegister() {
+  this.router.navigate(['register']);
+}
+
+navigateToSubscription() {
+  this.router.navigate(['subscription']);
+}
+
 
 }

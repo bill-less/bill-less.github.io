@@ -21,7 +21,19 @@ export class HeaderService implements OnInit{
 
 
   getSwitchButtonToHome() {
-    this.switchButtonToHome = this.router.isActive('register', true);
+    if(this.router.isActive('register', true)) {
+      this.switchButtonToHome = true;
+    }
+    else if(this.router.isActive('subscription', true)) {
+      this.switchButtonToHome = true;
+    }
+    else if(this.router.isActive('contact', true)) {
+      this.switchButtonToHome = true;
+    }
+    else {
+      this.switchButtonToHome = false;
+    }
+    
     return this.switchButtonToHome;
   }
 

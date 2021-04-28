@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterStateSnapshot } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { RegisterComponent } from './components/register/register.component';
-import { HeaderService } from './components/services/header.service';
+import { HeaderService } from './services/header.service';
 
 @Component({
   selector: 'app-root',
@@ -23,8 +21,8 @@ export class AppComponent implements OnInit {
 
   }
 
-  register() {
-    this.router.navigate(['register']);
+  contact() {
+    this.router.navigate(['contact']);
   }
 
   home() {

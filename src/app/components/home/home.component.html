@@ -1,22 +1,26 @@
-<div id="body">
-  <div id="wrapper">
+<div id="body" >
+  <div id="wrapper" *ngIf="!showContactButtons">
     <div id="mainTextDiv">
       <h1>Digitale Belegausgabe</h1>
-      <h2>mit auf Ihrer CASPOS Kasse</h2>
+      <h2>auf Ihrer CASPOS Kasse</h2>
     </div>
 
     <img id="casLogo" src="../../../assets/cas.png" alt="" />
     <br />
-    <button (click)="navigateToRegister()">Jetzt auf der Kasse installieren</button>
+    <button (click)="navigateToContact()">Jetzt auf der Kasse installieren</button>
     <br />
 
-    <div id="casouselDiv">
-      <nz-carousel [nzAutoPlay]="true" [nzAutoPlaySpeed]="6000">
-        <div nz-carousel-content *ngFor="let imageUrl of arrayOfImgUrls">
-          <img class="diashowPic" [src]='imageUrl' />
-        </div>
-      </nz-carousel>
+    <div>
+      <p id="casouselDescription">So funktionierts:</p>
+      <div id="casouselDiv">
+        <nz-carousel [nzAutoPlay]="true" [nzAutoPlaySpeed]="6000">
+          <div nz-carousel-content *ngFor="let imageUrl of arrayOfImgUrls">
+            <img class="diashowPic" [src]='imageUrl' />
+          </div>
+        </nz-carousel>
+      </div>
     </div>
+    
 
     <div class="dividerSmall">
 
@@ -32,7 +36,7 @@
           <div class="advantageContainer">
             <p class="advantageName">Gut für die Umwelt</p>
             <div>
-              <p classe="advantageDescription">Kein Ausdruck von unnötigen Belegen die im Müll landen</p>
+              <p class="advantageDescription">Kein Ausdruck von unnötigen Belegen die im Müll landen</p>
             </div>
           </div>
         </div>
@@ -41,9 +45,9 @@
             <img class="advantageIcon" id="timeIcon" src="../../../assets/time-is-money.png" alt="" />
           </div>
           <div class="advantageContainer">
-            <p class="advantageName">Kosten & Zeit einsparen</p>
+            <p class="advantageName">Kosten & Zeit <br> einsparen</p>
             <div>
-              <p classe="advantageDescription">für das Handling mit den Belegrollen</p>
+              <p class="advantageDescription">für das Handling mit den Belegrollen</p>
             </div>
           </div>
         </div>
@@ -52,16 +56,16 @@
             <img class="advantageIcon" src="../../../assets/online-payment.png" alt="" />
           </div>
           <div class="advantageContainer">
-            <p class="advantageName">Kontaktloser Belegempfang</p>
+            <p class="advantageName">Kontaktloser <br> Belegempfang</p>
             <div>
-              <p classe="advantageDescription">für einen komplett digitalen Bezahlprozess</p>
+              <p class="advantageDescription">für einen komplett digitalen Bezahlprozess</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <button (click)="navigateToRegister()">Jetzt auf der Kasse installieren</button>
+    <button (click)="navigateToContact()">Jetzt auf der Kasse installieren</button>
 
     <div class="dividerSmall">
 
@@ -76,11 +80,11 @@
       <div class="container" id="container2">
         <div class="contactInformation">
           <img src="../../../assets/telefon.png" alt="" />
-          <p>+49 0000000000</p>
+          <p>+49 162 9573494</p>
         </div>
         <div class="contactInformation">
           <img src="../../../assets/email.png" alt="" />
-          <p>Name@billless.app</p>
+          <p>info@billless.app</p>
         </div>
       </div>
     </div>
@@ -177,9 +181,14 @@
           <div class="accordionItem" id="question1">
             <hr>
             <div class="faqQuestion">
-              <a class="accordionLink" href="#question1">Erfülle ich mit dem Produkt die Belegpflicht?</a>
+              <a class="accordionLink" href="#question1">Welche Bedingungen muss ich erfüllen um das Modul “elektronischer Kassenbeleg / bill.less” nutzen zu können? </a>
               <div class="answer">
-                <p>Some awesome text :)</p>
+                <p>Um den digitalen Beleg an der Kasse auszugeben sind folgende Bedingungen notwendig:</p>
+                <ul id="faqList">
+                  <li>1. Die Kasse muss über über ein Kundendisplay verfügen</li>
+                  <li>2. Eine stabile Internetverbindung (mind. 50 MBit/s)</li>
+                  <li>3. Die Lizenzdatei für das Modul "Elektronischer Kassenbeleg / bill.less" von CAS muss erworben und auf der Kasse installiert worden sein.</li>
+                </ul>
               </div>
             </div>
 
@@ -188,14 +197,50 @@
           <div class="accordionItem" id="question2">
             <hr>
             <div class="faqQuestion">
-              <a class="accordionLink" href="#question2">Was muss gemacht werden, damit ich bill.less einsetzen
-                kann?</a>
+              <a class="accordionLink" href="#question2">Ich möchte das Modul “elektronischer Kassenbeleg / bill.less” nutzen, was muss ich tun?</a>
               <div class="answer">
-                <p>Some awesome text :) <br> ... <br> ... <br> ... <br> ... </p>
+                <p>Zunächst muss die Lizenzdatei für das Modul bei CAS erworben und auf der Kasse installiert werden. Hierzu an den zuständigen Kassenhändler wenden oder <a class="coloredLinks" (click)="navigateToRegister()">dieses Formular</a> ausfüllen.</p>
+                <p>Wenn die Lizenzdatei bereits auf der Kasse installiert ist, kann <a class="coloredLinks" (click)="navigateToSubscription()">hier</a> ein entsprechendes bill.less Paket gekauft werden. </p>
               </div>
             </div>
-
           </div>
+
+          <div class="accordionItem" id="question3">
+            <hr>
+            <div class="faqQuestion">
+              <a class="accordionLink" href="#question3">Erfülle ich mit dem Modul “elektronischer Kassenbeleg / bill.less” die Belegausgabepflicht?</a>
+              <div class="answer">
+                <p>Seit gilt die Belegausgabepflicht nach § 146a (2) AO, die besagt, dass jeder Beleg erstellt und ausgegeben werden muss. Nach diesem Gesetz kann die Belegbereitstellung auch über einen QR-Code auf dem Kundendisplay erfolgen.</p>
+                <p>Mit dem Modul ist die Belegausgabepflicht erfüllt. Der Beleg wurde elektronisch als PDF erstellt und digital über die Anzeige des QR-Codes auf dem Kundendisplay zur Verfügung gestellt.</p>
+              </div>
+            </div>      
+          </div>
+
+          <div class="accordionItem" id="question4">
+            <hr>
+            <div class="faqQuestion">
+              <a class="accordionLink" href="#question4">Welche Kündigungsfrist muss ich einhalten?</a>
+              <div class="answer">
+                <p>Das bill.less Paket ist mit einer monatlichen Frist zum Ende jenes Quartals kündbar.
+                  Ausnahme: Das Starter-Paket kann jederzeit gekündigt werden.
+                </p>
+                <p>Die Kündigung ist schriftlich per Mail an info@billless.app einzureichen.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordionItem" id="question5">
+            <hr>
+            <div class="faqQuestion">
+              <a class="accordionLink" href="#question5">Wann erhalte ich die Rechnung?</a>
+              <div class="answer">
+                <p>Die erste Rechnung wird sofort nach Vertragsabschluss für das laufende Quartal ausgestellt. 
+                  Alle weiteren Rechnungen werden zu Beginn jenes Quartals erstellt                  
+                </p>
+              </div>
+            </div>
+          </div>
+
         </div>
 
 

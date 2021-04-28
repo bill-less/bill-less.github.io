@@ -1,0 +1,186 @@
+#body {
+    background-color: #fff;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+h2 {
+    font-size: 50px;
+    margin: 0;
+}
+
+#orderFormPackageInfo {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
+  }
+
+
+#packagesDiv {
+    padding-bottom: 30px;
+  }
+
+  #packagesDiv p {
+    font-size: 20px;
+  }
+
+  #packagesContainer {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .package {
+    margin: 10px;
+    height: max-content;
+    transition: transform .3s;
+  }
+
+  .package img {
+    width: 100%;
+  }
+
+  .package:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: scale(1.1);
+  }
+
+  button {
+    background-color: #f79a7e;
+    color: black;
+    border-radius: 4px;
+    border: 2px solid #f79a7e;
+    cursor: pointer;
+  }
+
+  #overviewContainer {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #changeInputButton {
+      margin-bottom: 60px;
+  }
+
+  #changeableContentContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  #orderOverview {
+    width: 60%;
+    justify-content: left;
+    margin-right: 20px;
+  }
+
+  #contactOverview {
+    width: 40%;
+    justify-content: left;
+    margin-left: 20px;
+  }
+
+  #contactSelectionContainer {
+    text-align: left;
+  }
+
+  #contactSelectionRadioButtonContainer {
+    margin-bottom: 40px;
+  }
+
+  [nz-radio] {
+    display: block;
+  }
+
+  #infoBox {
+      text-align: left;
+  }
+
+  #checkBoxContainer {
+    margin-top: 50px;
+  }
+
+  .completeCheckBox {
+    display: flex;
+    text-align: left;
+  }
+
+  .checkBox {
+    margin-right: 10px;
+  }
+
+  #orderButtonContainer {
+    width: 100%;
+    text-align: center;
+  }
+
+  #orderButton {
+    margin: 30px auto;
+    width: 200px;
+    height: 50px;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    color: #f79a7e;
+  }
+
+
+    /* iPads (portrait and landscape) ----------- */
+@media only screen and (max-width: 1024px) {
+  /* Styles */
+
+
+  #packagesContainer {
+    flex-wrap: wrap;
+  }
+
+  .package {
+    width: 30%;
+  }
+
+  #contactOrderForm {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #changeableContentContainer {
+    flex-wrap: wrap;
+  }
+
+  #orderOverview {
+    width: 80%;
+    justify-content: left;
+    margin: 20px auto;
+  }
+
+  #contactOverview {
+    width: 80%;
+    justify-content: left;
+    margin: 20px auto;
+  }
+
+
+  }
+
+
+
+  /* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 380px) {
+  /* Styles */
+
+  .package {
+    width: 60%;
+  }
+
+  }
+
+
+
+  

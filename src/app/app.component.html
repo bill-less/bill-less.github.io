@@ -4,7 +4,7 @@
 
       <img id="logoHeader" src="../assets/Logo.png" alt="bill.less logo">
       
-      <button nz-button class="login-form-button login-form-margin contactButtonHeader" [nzType]="'primary'" (click)="register()" *ngIf="!headerService.getSwitchButtonToHome()">Kontakt</button> 
+      <button nz-button class="login-form-button login-form-margin contactButtonHeader" [nzType]="'primary'" (click)="contact()" *ngIf="!headerService.getSwitchButtonToHome()">Kontakt</button> 
       <button nz-button class="login-form-button login-form-margin contactButtonHeader" [nzType]="'primary'" (click)="home()" *ngIf="headerService.getSwitchButtonToHome()">Home</button> 
 
       
@@ -35,13 +35,13 @@
               <a href="https://billless.app/app">App</a>
             </li>
             <li>
-              <a href="https://billless.app/b2b">For Buisness</a>
+              <a href="https://billless.app/b2b">Für Unternehmen</a>
             </li>
             <li>
-              <a href="https://billless.app/aboutus">Our team</a>
+              <a href="https://billless.app/aboutus">Unser Team</a>
             </li>
             <li>
-              <a href="https://api-test.billless.io/api-docs/">API Docs</a>
+              <a href="https://api-test.billless.io/api-docs/">API Dokumentation</a>
           </ul>
         </div>
 
@@ -59,7 +59,7 @@
               <br>
               <a href="">+49 162 9573494</a>
               <br>
-              <button id="contactButtonFooter">Contact</button>
+              <button id="contactButtonFooter">Kontakt</button>
             </div>
 
           </div>
@@ -70,11 +70,11 @@
       <div id="footerPrivacy">
         <div>
           <div>
-            <a href="https://billless.app/imprint">Imprint</a>
+            <a href="https://billless.app/imprint">Impressum</a>
           </div>
 
           <div>
-            <a href="https://billless.app/policy">Privacy notice</a>
+            <a href="https://billless.app/policy">Datenschutzerklärung</a>
           </div>
         </div>
       </div>
