@@ -103,14 +103,6 @@ iframe {
     margin: 0 auto;
 }
 
-.upperRoundedDiv {
-    height: 25%;
-    width: 180px;
-    background-color: #94a4aac9;
-    border-radius: 120px 120px 0 0;
-    margin: 0 auto;
-}
-
 .advantageIcon {
     margin-top: 25px;
     width: 40%;
@@ -173,7 +165,7 @@ iframe {
 }
 
 #packagesBody {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -230,6 +222,64 @@ ul {
 .packagePrice {
     font-weight: 500;
 }
+
+#additionalContent {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    margin-top: 30px
+}
+
+#additionalInfo {
+    width: 28%;
+    height: fit-content;
+    background-color: #f0efe6;
+}
+
+#infoWrapper {
+    width: 70%;
+    margin: 10px auto;
+}
+
+#infoHeader {
+    font-size: 1.4vw;
+    font-weight: bolder;
+    line-height: 1.8vw;
+}
+
+#infoDescription {
+    font-size: 1vw;
+    line-height: 1.2vw;
+}
+
+#additionalOptions {
+    background-color: #f0efe634;
+    width: 100%;
+    margin-left: 30px;
+    padding-top: 20px;
+}
+
+.option {
+    display: flex;
+    text-align: left;
+}
+
+.option p {
+    //width: 40%;
+    padding-left: 20px;
+}
+
+.optionHeader {
+    font-size: 1.2vw;
+    font-weight: bold;
+    width: fit-content;
+}
+
+.optionDescription {
+    font-size: 1.2vw;
+}
+
+
 
 #furtherInformationHeader {
     margin: 0;
@@ -427,6 +477,39 @@ a {
         margin-top: 20px;
     }
 
+    #additionalContent {
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 50px;
+    }
+
+    #additionalInfo {
+        width: 40%;
+        padding-top: 10px;
+        height: 18vw;
+    }
+
+    #infoHeader {
+        font-size: 2vw;
+        line-height: 2.2vw;
+    }
+
+    #infoDescription {
+        font-size: 1.5vw;
+        line-height: 2vw;
+    }
+
+    .optionHeader {
+        font-size: 1.8vw;
+    }
+
+    .optionDescription {
+        font-size: 1.8vw;
+    }
+
+
+
+
     .furtherInformationDownloadDiv {
         display:inline-block; 
     }
@@ -510,6 +593,48 @@ a {
     
     .packagePic {
         width: 100%;
+    }
+
+    #additionalContent {
+        display: block;
+    }
+
+    #additionalInfo {
+        width: 80%;
+        margin: 0 auto;
+        height: fit-content;
+    }
+
+    #infoHeader {
+        font-size: 3.6vw;
+        line-height: 5vw;
+    }
+
+    #infoDescription {
+        font-size: 2.8vw;
+        line-height: 4.5vw;
+        padding-bottom: 10px;
+    }
+
+    #additionalOptions {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .option {
+        display: block;
+    }
+
+    .optionHeader {
+        font-size: 3.3vw;
+        margin: 0;
+        padding-top: 8px;
+        padding-bottom: 5px;
+    }
+
+    .optionDescription {
+        font-size: 2.6vw;
+        margin: 0;
     }
 
     .furtherInformationDownloadDiv {
@@ -635,7 +760,7 @@ a {
     }
 
     .packageDiv {
-        width: 70%;
+        width: 80%;
         margin-top: 20px;
     }
     
@@ -643,8 +768,32 @@ a {
         width: 100%;
     }
 
+    #infoWrapper {
+        width: 80%;
+    }
+
+    #infoHeader {
+        font-size: 6vw;
+        font-weight: 900;
+        line-height: 6.5vw;
+    }
+
+    #infoDescription {
+        font-size: 4.5vw;
+    }
+
+    .optionHeader {
+        font-weight: bolder;
+        font-size: 6vw;
+    }
+
+    .optionDescription {
+        font-size: 5vw;
+    }
+
     .furtherInformationDownloadDiv {
-        width: 100%;
+        width: 80%;
+        margin: 0 auto;
     }
 
     .faqQuestion {
