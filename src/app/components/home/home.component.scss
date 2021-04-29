@@ -243,12 +243,11 @@ ul {
 .furtherInformationDownloadDiv {
     margin: 20px 0;
     width: 50%;
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.furtherInformationDownloadDiv > *{
-    text-align: center; 
-    display: inline-flex; 
-}
 
 .furtherInformationDownloadDiv img {
     height: 80px;
@@ -344,7 +343,7 @@ a {
 }
 
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 1200px) {
     /* * {
         color: #f79a7e;
     } */
@@ -426,6 +425,13 @@ a {
     .packageDiv {
         width: 30%;
         margin-top: 20px;
+    }
+
+    .furtherInformationDownloadDiv {
+        display:inline-block; 
+    }
+    .furtherInformationDownloadDiv ul {
+        text-align: center;
     }
     
     
