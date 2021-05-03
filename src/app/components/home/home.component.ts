@@ -10,10 +10,10 @@ import { HeaderService } from '../../services/header.service';
 export class HomeComponent implements OnInit {
 
   arrayOfImgUrls = [
-    '../../../assets/1.png',
-    '../../../assets/2.png',
-    '../../../assets/3.png',
-    '../../../assets/4.png',
+    { src: '../../../assets/1.png' },
+    { src: '../../../assets/2.png' },
+    { src: '../../../assets/3.png' },
+    { src: '../../../assets/4.png' },
   ];
 
   showContactButtons = false;

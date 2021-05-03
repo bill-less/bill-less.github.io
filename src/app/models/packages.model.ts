@@ -1,11 +1,11 @@
 export interface IOrderDto {
-    mail: string;
+    receiverMail: string;
     contactData: IContactFormData;
     packageData: IPackage;
 }
 
 export interface IRegisterDto {
-    mail: string;
+    receiverMail: string;
     contactData: IContactFormData;
 }
 

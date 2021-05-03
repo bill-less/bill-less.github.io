@@ -36,6 +36,7 @@ import { HeaderService } from './services/header.service';
 import { SubscriptionComponent } from './components/subscription/subscription.component';
 import { ContactComponent } from './components/contact/contact.component'
 import { NzConfig } from 'ng-zorro-antd/core/config';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 registerLocaleData(de);
 
@@ -54,7 +55,8 @@ const ngZorroConfig: NzConfig = {
     HomeComponent,
     RegisterComponent,
     SubscriptionComponent,
-    ContactComponent
+    ContactComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

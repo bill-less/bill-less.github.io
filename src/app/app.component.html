@@ -2,7 +2,7 @@
   <nz-header>
     <header>
 
-      <img id="logoHeader" src="../assets/Logo.png" alt="bill.less logo">
+      <a href=""><img (click)="home()" id="logoHeader" src="../assets/Logo.png" alt="bill.less logo"></a>
       
       <button nz-button class="login-form-button login-form-margin contactButtonHeader" [nzType]="'primary'" (click)="contact()" *ngIf="!headerService.getSwitchButtonToHome()">Kontakt</button> 
       <button nz-button class="login-form-button login-form-margin contactButtonHeader" [nzType]="'primary'" (click)="home()" *ngIf="headerService.getSwitchButtonToHome()">Home</button> 

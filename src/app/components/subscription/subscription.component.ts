@@ -6,6 +6,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { AppComponent } from 'src/app/app.component';
 import { IContactFormData, IOrderDto, IPackage } from 'src/app/models/packages.model';
 import { ContactService } from 'src/app/services/contact.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-subscription',
@@ -239,7 +240,7 @@ export class SubscriptionComponent implements OnInit {
   }
 
   getOrderData(): IOrderDto {
-    const mail: string = this.validateForm.value.email
+    const receiverMail: string = environment.mailForOrder;
 
     const contactData: IContactFormData = {
       name: this.validateForm.value.name,
@@ -261,7 +262,7 @@ export class SubscriptionComponent implements OnInit {
     }
 
     const order: IOrderDto = {
-      mail,
+      receiverMail,
       contactData,
       packageData
     }

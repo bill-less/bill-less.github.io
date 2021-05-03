@@ -9,6 +9,7 @@ import { AppComponent } from 'src/app/app.component';
 import { IContactFormData, IPackage, IRegisterDto } from 'src/app/models/packages.model';
 import { ContactService } from 'src/app/services/contact.service';
 import { HeaderService } from '../../services/header.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-register',
@@ -36,6 +37,10 @@ export class RegisterComponent implements OnInit {
       name: [null, [Validators.required]],
       companyName: [null, [Validators.required]],
       email: [null, [Validators.required]],
+      street: [null, [Validators.required]],
+      houseNumber: [null, [Validators.required]],
+      postCode: [null, [Validators.required]],
+      city: [null, [Validators.required]],
       phoneNumberPrefix: ['+49'],
       phoneNumber: [null, [Validators.required]],
       serialNumber: [null, [Validators.required]],
@@ -74,7 +79,7 @@ export class RegisterComponent implements OnInit {
   }
 
   getRegisterData(): IRegisterDto {
-    const mail: string = this.registerForm.value.email
+    const receiverMail: string = environment.mailForRegister;
 
     const contactData: IContactFormData = {
       name: this.registerForm.value.name,
@@ -89,7 +94,7 @@ export class RegisterComponent implements OnInit {
     }
 
     const registerData: IRegisterDto = {
-      mail,
+      receiverMail,
       contactData,
     }
 

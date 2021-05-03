@@ -10,17 +10,9 @@
     <button (click)="navigateToContact()">Jetzt auf der Kasse installieren</button>
     <br />
 
-    <div>
-      <p id="casouselDescription">So funktionierts:</p>
-      <div id="casouselDiv">
-        <nz-carousel [nzAutoPlay]="true" [nzAutoPlaySpeed]="6000">
-          <div nz-carousel-content *ngFor="let imageUrl of arrayOfImgUrls">
-            <img class="diashowPic" [src]='imageUrl' />
-          </div>
-        </nz-carousel>
-      </div>
+    <div class="carouselContainer">
+      <app-carousel [slides]="arrayOfImgUrls"></app-carousel>
     </div>
-    
 
     <div class="dividerSmall">
 
@@ -167,7 +159,7 @@
             </a>
             <div>
               <ul>
-                <li>Funktionsweise:</li>
+                <li>Funktionsweise</li>
                 <li id="costInfo">an der Kasse</li>
               </ul>
             </div>
@@ -179,7 +171,7 @@
             </a>
             <div>
               <ul>
-                <li>Preisliste:</li>
+                <li>Preisliste</li>
                 <li id="costInfo">Stand: April 2021</li>
               </ul>
             </div>

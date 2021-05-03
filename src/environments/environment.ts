@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  host: 'http://localhost:3000'
+  host: 'https://api-test.billless.io/',
+  mailForRegister: 'josue@billless.app',
+  mailForOrder: 'josue@billless.app',
 };
 
 /*

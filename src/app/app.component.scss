@@ -50,7 +50,6 @@ footer * {
 }
 
 #footerInfo > div {
-    //flex: 1;
     width: 33%;
     text-align: center;
 }
@@ -131,10 +130,6 @@ footer #contactSectionFooter a{
 
 
 @media only screen and (max-width: 650px) {
-
-    * { 
-        //background-color: #fff;
-    }
 
     #billlessLogo {
         width: 100%;

@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { environment } from '../../environments/environment'
+import { environment } from '../../environments/environment';
 import { IOrderDto, IRegisterDto } from '../models/packages.model';
 
 

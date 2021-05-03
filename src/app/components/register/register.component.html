@@ -60,6 +60,58 @@
                     <input nz-input id="companyName" formControlName="companyName" />
                   </nz-form-control>
                 </nz-form-item>
+
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="street" nzRequired>
+                    <span>Straße</span>
+                  </nz-form-label>
+                  <nz-form-control
+                    [nzSm]="14"
+                    [nzXs]="24"
+                    nzErrorTip="Bitte einen Straßenamen eingeben!"
+                  >
+                    <input nz-input id="street" formControlName="street" />
+                  </nz-form-control>
+                </nz-form-item>
+          
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="houseNumber" nzRequired>
+                    <span>Hausnummer</span>
+                  </nz-form-label>
+                  <nz-form-control
+                    [nzSm]="14"
+                    [nzXs]="24"
+                    nzErrorTip="Bitte eine Hausnummer eingeben!"
+                  >
+                    <input nz-input id="houseNumber" formControlName="houseNumber" />
+                  </nz-form-control>
+                </nz-form-item>
+          
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="postCode" nzRequired>
+                    <span>Plz</span>
+                  </nz-form-label>
+                  <nz-form-control
+                    [nzSm]="14"
+                    [nzXs]="24"
+                    nzErrorTip="Bitte eine Postleitzahl eingeben!"
+                  >
+                    <input nz-input id="postCode" formControlName="postCode" />
+                  </nz-form-control>
+                </nz-form-item>
+          
+                <nz-form-item>
+                  <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="city" nzRequired>
+                    <span>Ort</span>
+                  </nz-form-label>
+                  <nz-form-control
+                    [nzSm]="14"
+                    [nzXs]="24"
+                    nzErrorTip="Bitte einen Ortsnamen eingeben!"
+                  >
+                    <input nz-input id="city" formControlName="city" />
+                  </nz-form-control>
+                </nz-form-item>
   
                 <nz-form-item>
                   <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
