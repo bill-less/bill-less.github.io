@@ -384,33 +384,12 @@ a {
 
 
 @media only screen and (max-width: 1200px) {
-    /* * {
-        color: #f79a7e;
-    } */
 
-    #casouselDescription {
-        text-align: center;
-        padding: 20px 0 20px 0;
-    }
-
-    nz-carousel {
-        height: 50vw;
-        color: #143d42;
-    }
-      
-    .diashowPic {
-        height: 50vw;
+    .carouselContainer {
+        padding-top: 40px;
+        width: 70%;
         margin: 0 auto;
-    }
-
-    button {
-        width: 80%;
-        font-size: 4vw;
-    }
-
-    iframe {
-        width: 80vw;
-        height: 50vh;
+        height: 40vw;
     }
 
     .formedDiv {
@@ -520,11 +499,11 @@ a {
     .formedDiv {
         width: 80%;
         display: block;
-        margin: 0 auto;
+        margin: 20px auto;
     }
 
     .advantageContainer {
-        padding-bottom: 10px;
+        padding-bottom: 0px;
         min-height: fit-content;
     }
 
@@ -552,6 +531,7 @@ a {
     }
 
 
+
     #contactSectionBody {
         width: 100%
     }
@@ -559,6 +539,7 @@ a {
     .contactInformation {
         padding: 10px;
         width: 90%;
+        margin: 20px auto;
     }
 
     .contactInformation > * {
@@ -572,7 +553,7 @@ a {
     }
 
     .contactInformation img {
-        width: 15%;
+        width: 13%;
         padding-right: 10px;
     }
 
@@ -651,14 +632,15 @@ a {
         margin: 0 auto;
     }
 
-    nz-carousel {
-        height: 50vw;
-        color: #143d42;
+    .carouselContainer {
+        padding-top: 40px;
+        width: 90%;
+        margin: 0 auto;
+        height: 60vw;
     }
       
-    .diashowPic {
-        height: 50vw;
-        margin: 0 auto;
+    .dividerSmall {
+        height: 10px
     }
 
    #mainTextDiv {
@@ -749,6 +731,10 @@ a {
         padding-right: 10px;
     }
 
+    .divider {
+        height: 90px;
+    }
+
     .packageDiv {
         width: 80%;
         margin-top: 20px;
@@ -791,7 +777,7 @@ a {
     }
 
     .faqQuestion a {
-        font-size: 20px;
+        font-size: 15px;
     }
     
 }
